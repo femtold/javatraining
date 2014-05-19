@@ -17,7 +17,6 @@ Email:	terry_love_c@sina.com
 #####################################
 
 name  :Kevin
-QQ    :1023959028
 e-mail:1023959028@qq.com	
 phone :18036832431
 
