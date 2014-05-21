@@ -5,9 +5,9 @@ class dog extends animal{
 		super(species,name);
 	}
 	void speak(){
-		System.out.println(this.name +"barks");
+		System.out.println(this.name +  " barks");
 	}
 	void move(){
-		System.out.println(this.name +"runs on four feet");
+		System.out.println(this.name +" runs on four feet");
 	}
 }

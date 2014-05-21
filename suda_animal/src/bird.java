@@ -5,10 +5,10 @@ class bird extends animal{
 	super(species,name);
 	}
 	void speak (){
-	System.out.println(this.name+"clucks");
+	System.out.println(this.name+" clucks");
 	}
 
 	void move(){
-	System.out.println(this.name +"flies");
+	System.out.println(this.name +" flies");
 	}
 }
