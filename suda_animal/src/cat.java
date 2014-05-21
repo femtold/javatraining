@@ -1,4 +1,4 @@
-class cat{
+class cat extends animal{
 	private String species;
 	private String name;
 	cat(String species,String name){
@@ -8,6 +8,6 @@ class cat{
 	System.out.println(this.name +" mews");
 	}
 	void move(){
-	Syetem.out.println(this.name + " runs on four feets");	
+	System.out.println(this.name + " runs on four feets");	
 	}
 }
