@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.asmide.junlee.ui.editor.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="com.asmide.junlee.ui.editor.Perspective"
+            id="com.asmide.junlee.ui.editor.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.asmide.junlee.ui.editor.ASMEditor"
+            default="false"
+            extensions="asm"
+            id="com.asmide.junlee.ui.editor.ASMEditor"
+            name="ASMEditor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            class="com.asmide.junlee.ui.editor.view.TestView"
+            id="com.asmide.junlee.ui.editor.testview"
+            name="testview"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.asmede.junlee.ui.memu.OpenFile"
+            commandId="com.asmide.junlee.ui.editor.commandopenfile">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="com.asmede.junlee.ui.memu.OpenFile"
+            id="com.asmide.junlee.ui.editor.commandopenfile"
+            name="openfile">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="File">
+            <command
+                  commandId="org.eclipse.ui.newWizard"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+</plugin>
