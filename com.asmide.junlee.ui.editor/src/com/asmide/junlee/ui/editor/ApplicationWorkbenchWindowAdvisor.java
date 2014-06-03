@@ -1,6 +1,9 @@
 package com.asmide.junlee.ui.editor;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.ui.IWorkbenchPage;
 import org.eclipse.ui.PartInitException;
@@ -32,7 +35,10 @@ public class ApplicationWorkbenchWindowAdvisor extends WorkbenchWindowAdvisor {
 	}
 
 	public void postWindowOpen() {
-		ASMEditorInput input = new ASMEditorInput(/*file*/);
+		IWorkspaceRoot myWorkspaceRoot = ResourcesPlugin.getWorkspace().getRoot();
+		IProject myProject = myWorkspaceRoot.getProject("terry_project");
+		IFile myfile = myProject.getFile("hello.asm");
+		ASMEditorInput input = new ASMEditorInput(myfile);
 		try {
 			PlatformUI.getWorkbench().getActiveWorkbenchWindow()
 					.getActivePage().openEditor(input, ASMEditor.ID);

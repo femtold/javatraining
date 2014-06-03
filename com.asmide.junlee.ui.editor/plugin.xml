@@ -23,7 +23,7 @@
          point="org.eclipse.ui.editors">
       <editor
             class="com.asmide.junlee.ui.editor.ASMEditor"
-            default="false"
+            default="true"
             extensions="asm"
             id="com.asmide.junlee.ui.editor.ASMEditor"
             name="ASMEditor">
@@ -44,6 +44,14 @@
             class="com.asmede.junlee.ui.memu.OpenFile"
             commandId="com.asmide.junlee.ui.editor.commandopenfile">
       </handler>
+      <handler
+            class="org.eclipse.ui.internal.handlers.WizardHandler$Import"
+            commandId="com.asmide.junlee.ui.editor.commandimport">
+      </handler>
+      <handler
+            class="org.eclipse.ui.internal.handlers.WizardHandler$New"
+            commandId="com.asmide.junlee.ui.editor.newfile">
+      </handler>
    </extension>
    <extension
          point="org.eclipse.ui.commands">
@@ -51,6 +59,14 @@
             defaultHandler="com.asmede.junlee.ui.memu.OpenFile"
             id="com.asmide.junlee.ui.editor.commandopenfile"
             name="openfile">
+      </command>
+      <command
+            id="com.asmide.junlee.ui.editor.commandimport"
+            name="import">
+      </command>
+      <command
+            id="com.asmide.junlee.ui.editor.newfile"
+            name="NewFile">
       </command>
    </extension>
    <extension
@@ -61,11 +77,34 @@
          <menu
                label="File">
             <command
-                  commandId="org.eclipse.ui.newWizard"
+                  commandId="com.asmide.junlee.ui.editor.commandimport"
+                  label="import"
+                  style="push">
+            </command>
+            <command
+                  commandId="com.asmide.junlee.ui.editor.commandopenfile"
+                  label="openfile"
+                  style="push">
+            </command>
+            <command
+                  commandId="com.asmide.junlee.ui.editor.newfile"
+                  label="newfile"
                   style="push">
             </command>
          </menu>
       </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.ui.resourcePerspective">
+         <view
+               id="com.example.test"
+               ratio="0.5"
+               relationship="stack"
+               relative="org.eclipse.ui.navigator.ProjectExplorer">
+         </view>
+      </perspectiveExtension>
    </extension>
 
 </plugin>
