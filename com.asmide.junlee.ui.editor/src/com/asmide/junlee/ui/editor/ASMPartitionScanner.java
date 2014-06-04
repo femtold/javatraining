@@ -3,9 +3,8 @@ package com.asmide.junlee.ui.editor;
 import java.util.ArrayList;
 
 import org.eclipse.jface.text.rules.EndOfLineRule;
-import org.eclipse.jface.text.rules.ICharacterScanner;
+
 import org.eclipse.jface.text.rules.IPredicateRule;
-import org.eclipse.jface.text.rules.IRule;
 import org.eclipse.jface.text.rules.IToken;
 import org.eclipse.jface.text.rules.RuleBasedPartitionScanner;
 import org.eclipse.jface.text.rules.SingleLineRule;
@@ -23,7 +22,7 @@ public class ASMPartitionScanner extends RuleBasedPartitionScanner {
 		IToken singlelinecomment = new Token(SINGLELINE_COMMENT);
 		IToken string = new Token(STRING);
 		
-		ArrayList<IRule> rules = new ArrayList<IRule>();
+		ArrayList<IPredicateRule> rules = new ArrayList<IPredicateRule>();
 		
 		rules.add(new EndOfLineRule(";", singlelinecomment));
 		rules.add(new SingleLineRule("\"", "\"", string));

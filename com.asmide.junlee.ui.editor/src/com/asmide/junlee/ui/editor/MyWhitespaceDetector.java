@@ -7,7 +7,8 @@ public class MyWhitespaceDetector implements IWhitespaceDetector {
 	@Override
 	public boolean isWhitespace(char c) {
 		// TODO Auto-generated method stub
-		return Character.isWhitespace(c);
+		return (c == ' ' || c == '\t' || c == '\n' || c == '\r');
+		//return Character.isWhitespace(c);
 	}
 
 }

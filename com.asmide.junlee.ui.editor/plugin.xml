@@ -25,6 +25,7 @@
             class="com.asmide.junlee.ui.editor.ASMEditor"
             default="true"
             extensions="asm"
+            icon="icons/sample.gif"
             id="com.asmide.junlee.ui.editor.ASMEditor"
             name="ASMEditor">
       </editor>
